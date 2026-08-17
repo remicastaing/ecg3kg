@@ -18,9 +18,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install
-        run: |
-          uv venv
-          uv pip install -e ".[dev,torch]"
+        run: uv pip install -e ".[dev,torch]"   # setup-uv already created and activated .venv
       - name: Lint
         run: uv run ruff check src tests
       - name: Test
