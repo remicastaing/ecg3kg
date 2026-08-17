@@ -21,4 +21,5 @@ First release: an independent implementation of the geometric augmentation of Go
 
 ### Notes
 
+- Local rehearsal of the release checklist (2026-08-17, Apple M-series, before the GitHub push): fresh venv + install from the git repository + README example + clone + full test-suite = **17 s** end to end; the test-suite itself runs in **0.4 s** warm (12.7 s on the very first run of a fresh venv, which is numpy/scipy byte-compilation, not the tests); `import ecg3kg` takes 27 ms and does not import torch. To be re-measured from the GitHub tag once pushed.
 - Package name `ecg3kg` checked on PyPI on 2026-08-17: not taken (HTTP 404 on `https://pypi.org/pypi/ecg3kg/json`). PyPI publication is prepared (`publish.yml`, trusted publishing) but not performed with this release.
