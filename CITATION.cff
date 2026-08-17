@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use ecg3kg, please cite both the package (below) and the 3KG paper (see references)."
+type: software
+title: "ecg3kg: physiologically-inspired 3D augmentation of 12-lead ECGs via the vectorcardiogram"
+version: 0.1.0
+date-released: 2026-08-17
+license: MIT
+repository-code: "https://github.com/remicastaing/ecg3kg"
+authors:
+  - family-names: Castaing
+    given-names: Rémi
+    email: remi.castaing@gmail.com
+keywords:
+  - ECG
+  - vectorcardiogram
+  - data augmentation
+  - 3KG
+  - self-supervised learning
+references:
+  - type: conference-paper
+    title: "3KG: Contrastive Learning of 12-Lead Electrocardiograms using Physiologically-Inspired Augmentations"
+    authors:
+      - family-names: Gopal
+        given-names: Bryan
+      - family-names: Han
+        given-names: Ryan
+      - family-names: Raghupathi
+        given-names: Gautham
+      - family-names: Ng
+        given-names: Andrew
+      - family-names: Tison
+        given-names: Geoff
+      - family-names: Rajpurkar
+        given-names: Pranav
+    collection-title: "Proceedings of Machine Learning for Health (ML4H), PMLR 158"
+    year: 2021
+    start: 156
+    end: 167
+    url: "https://proceedings.mlr.press/v158/gopal21a.html"
