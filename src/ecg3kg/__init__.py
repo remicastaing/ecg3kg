@@ -5,6 +5,7 @@ This package reconstructs that dipole from the 8 independent leads, rotates and 
 projects it back — the augmentation of Gopal et al., *3KG*, ML4H 2021.
 """
 
+from .augment import Draw, RandomVCGAugment
 from .dipole import MODES, apply_matrix_ecg, ecg_to_vcg, vcg_to_ecg
 from .geometry import ORDERS, Transform
 from .leads import LEAD_PRESETS, resolve_leads
@@ -15,12 +16,14 @@ __version__ = "0.1.0"
 __all__ = [
     "__version__",
     "DOWER",
+    "Draw",
     "INDEPENDENT_LEADS",
     "INVERSE_DOWER",
     "KORS",
     "LEAD_PRESETS",
     "MODES",
     "ORDERS",
+    "RandomVCGAugment",
     "Transform",
     "apply_matrix_ecg",
     "ecg_to_vcg",
