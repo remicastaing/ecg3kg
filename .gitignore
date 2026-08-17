@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Sorties d'exemples (l'image du README vit dans docs/, versionnée)
+examples/out/
+
+# Éditeurs / OS
+.vscode/
+.idea/
+.DS_Store
+*.swp

@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ecg3kg"
+version = "0.1.0"
+description = "Physiologically-inspired 3D augmentation of 12-lead ECGs via the vectorcardiogram (3KG: rotation and scaling of the cardiac dipole)."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Rémi Castaing", email = "remi.castaing@gmail.com" }]
+requires-python = ">=3.10"
+keywords = ["ecg", "vcg", "vectorcardiogram", "augmentation", "3KG", "contrastive", "self-supervised"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+torch = ["torch>=2.0"]
+dev = ["pytest", "ruff", "scipy"]
+
+[project.urls]
+Homepage = "https://github.com/remicastaing/ecg3kg"
+Issues = "https://github.com/remicastaing/ecg3kg/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ecg3kg"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
