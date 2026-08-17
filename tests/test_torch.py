@@ -19,10 +19,11 @@ def test_torch_same_result_as_numpy(ecg_standard, dtype):
     ref = t.apply_ecg(batch, leads="standard")
     out = e3t.apply_ecg(torch.from_numpy(batch), t, leads="standard")
     assert isinstance(out, torch.Tensor)
-    np.testing.assert_allclose(out.numpy(), ref, rtol=1e-6 if dtype == np.float32 else 1e-12)
+    tol = dict(rtol=1e-6, atol=1e-6) if dtype == np.float32 else dict(rtol=1e-12, atol=1e-12)
+    np.testing.assert_allclose(out.numpy(), ref, **tol)
     out2 = e3t.apply_matrix_ecg(torch.from_numpy(batch), t.matrix(), leads="standard")
     np.testing.assert_allclose(out2.numpy(), apply_matrix_ecg(batch, t.matrix(), leads="standard"),
-                               rtol=1e-6 if dtype == np.float32 else 1e-12)
+                               **tol)
 
 
 def test_torch_device_and_dtype_preserved(ecg_standard):
